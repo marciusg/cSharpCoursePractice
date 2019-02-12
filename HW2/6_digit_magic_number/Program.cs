@@ -10,27 +10,55 @@ namespace HW_2
     {
         static void Main(string[] args)
         {
-            int a = 100000;
-            int b = 900000;
-            int[] NumList = Int_to_array(a,b);
+            int a = 102345;
+            int b = 987654;
+            int[] NumList = Int_to_array(a, b);
+            int[] NumList2 = (int[])NumList.Clone();
 
-            for(int i = a; i <= b; i++)
+            int[] SortedNr = new int[999999];
+
+
+            for (int i = 0; i <= b - a; i++)
             {
-             if (AreDigitsUnique(NumList[i]))
-               {
-                   Console.WriteLine(NumList[i]);
-               }
+
+                if (AreDigitsUnique(NumList2[i]))
+                {
+                    //Console.WriteLine("Geras");
+                    //Console.WriteLine(NumList2[i]);
+                    SortedNr[i] = NumList2[i];
+                }
+                else
+                {
+                    continue;
+                    //Console.WriteLine("Blogas");
+                    // Console.WriteLine(NumList2[i]);
+                }
             }
-           
-            //Console.WriteLine(NumList[4545]);
+
+            // Console.WriteLine(SortedNr.Length-1);
+
+            for (int i = 0; i < b - a; i++)
+            {
+                if (SortedNr[i] != 0)
+                {
+                    Console.WriteLine(SortedNr[i]);
+                }
+
+            }
+
+
+            //Console.WriteLine(NumList2.Length);
+
+
+            //Console.WriteLine(NumList2.Length);
             Console.Read();
-            
+
         }
 
 
         static public int[] Int_to_array(int a, int b)
         {
-            int[] number_array = new int[999999];
+            int[] number_array = new int[b];
             for (int i = a; i <= b; i++)
             {
                 int start_from_zero = (i - a);
@@ -41,6 +69,7 @@ namespace HW_2
 
         static public bool AreDigitsUnique(int q)
         {
+
             int[] Unique = new int[6];
             Unique[0] = q % 1000000 / 100000;
             Unique[1] = q % 100000 / 10000;
@@ -49,19 +78,35 @@ namespace HW_2
             Unique[4] = q % 100 / 10;
             Unique[5] = q % 10;
 
-            for(int i = 0; i < Unique.Length-2; i++)
+            for (int i = 0; i < Unique.Length - 1; i++)
+
             {
-                for( int j = i+1; j<= Unique.Length-1; j++ )
+                for (int j = i + 1; j < Unique.Length; j++)
                 {
                     if (Unique[i] == Unique[j])
                     {
                         return false;
                     }
                 }
-                return true;
-            } 
+            }
             return true;
         }
+
+        /*static public void Magic (int a)
+        {
+            for( int t = 0; t <= numb_array.Length; t++ )
+
+                if ( AreDigitsUnique(t) == true)
+                {
+                    if (AreDigitsUnique(t*2) == true)
+                    {
+                        if(AreDigitsUnique)
+                    }
+                }
+
+        }*/
+
+
 
 
     }

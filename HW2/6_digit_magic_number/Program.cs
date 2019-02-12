@@ -30,7 +30,7 @@ namespace HW_2
 
         static public int[] Int_to_array(int a, int b)
         {
-            int[] number_array = new int[900000];
+            int[] number_array = new int[999999];
             for (int i = a; i <= b; i++)
             {
                 int start_from_zero = (i - a);
@@ -49,12 +49,14 @@ namespace HW_2
             Unique[4] = q % 100 / 10;
             Unique[5] = q % 10;
 
-            for(int i = 0; i <= Unique.Length-1; i++)
+            for(int i = 0; i < Unique.Length-2; i++)
             {
-                for( int j = i+1; j<= Unique.Length; j++ )
+                for( int j = i+1; j<= Unique.Length-1; j++ )
                 {
                     if (Unique[i] == Unique[j])
+                    {
                         return false;
+                    }
                 }
                 return true;
             } 

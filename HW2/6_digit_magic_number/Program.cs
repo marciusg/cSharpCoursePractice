@@ -10,47 +10,56 @@ namespace HW_2
     {
         static void Main(string[] args)
         {
-
             int a = 100000;
-            int b = 999999;
-            string real = "1234567890";
+            int b = 900000;
+            int[] NumList = Int_to_array(a,b);
 
-
-
-
-
-            Int_to_array(a, b);
-
-
-            // Int_to_array_min(a);
-            //Int_to_array_max(b);
-            Console.WriteLine();
-            Console.ReadLine();
-
-
+            for(int i = a; i <= b; i++)
+            {
+             if (AreDigitsUnique(NumList[i]))
+               {
+                   Console.WriteLine(NumList[i]);
+               }
+            }
+           
+            //Console.WriteLine(NumList[4545]);
+            Console.Read();
+            
         }
 
 
-        static int[] Int_to_array(int a, int b)
+        static public int[] Int_to_array(int a, int b)
         {
-            int[] number_array = new int[899999];
-
-            for (int i = a; i < b; i++)
+            int[] number_array = new int[900000];
+            for (int i = a; i <= b; i++)
             {
-                string w = i.ToString();
-                number_array[i - a] = Convert.ToInt32(w);
-
-
+                int start_from_zero = (i - a);
+                number_array[start_from_zero] = i;
             }
-
-            /*for (int j = 0; j < number_array.Length; j++)
-            {
-                Console.Write(number_array[j] + ". ");
-            }*/
             return number_array;
         }
 
-      
+        static public bool AreDigitsUnique(int q)
+        {
+            int[] Unique = new int[6];
+            Unique[0] = q % 1000000 / 100000;
+            Unique[1] = q % 100000 / 10000;
+            Unique[2] = q % 10000 / 1000;
+            Unique[3] = q % 1000 / 100;
+            Unique[4] = q % 100 / 10;
+            Unique[5] = q % 10;
+
+            for(int i = 0; i <= Unique.Length-1; i++)
+            {
+                for( int j = i+1; j<= Unique.Length; j++ )
+                {
+                    if (Unique[i] == Unique[j])
+                        return false;
+                }
+                return true;
+            } 
+            return true;
+        }
 
 
     }

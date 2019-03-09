@@ -23,37 +23,66 @@ namespace HW_2
 
                 if (AreDigitsUnique(NumList2[i]))
                 {
-                    //Console.WriteLine("Geras");
-                    //Console.WriteLine(NumList2[i]);
                     SortedNr[i] = NumList2[i];
                 }
                 else
                 {
                     continue;
-                    //Console.WriteLine("Blogas");
-                    // Console.WriteLine(NumList2[i]);
                 }
             }
 
             // Console.WriteLine(SortedNr.Length-1);
-
-            for (int i = 0; i < b - a; i++)
-            {
+            int[] tst = new int[999999];
+            for (int i = 0; i < (b - a) - 1; i++)
+            { 
                 if (SortedNr[i] != 0)
                 {
                     Console.WriteLine(SortedNr[i]);
                 }
+               
 
+
+
+
+                /* for(int j = i+1; j < b - a; j++)
+                {
+
+                    if (SortedNr[j] == SortedNr[i]*2)
+                    {
+
+                        if (SortedNr[j] == SortedNr[i] * 3)
+                        {
+                            Console.WriteLine(SortedNr[j]);
+                            if (SortedNr[j] == SortedNr[i] * 4)
+                            {
+                                Console.WriteLine(SortedNr[j]);
+                                if (SortedNr[j] == SortedNr[i] * 5)
+                                {
+                                    Console.WriteLine(SortedNr[j]);
+                                    if (SortedNr[j] == SortedNr[i] * 6)
+                                    {
+                                        Console.WriteLine(SortedNr[j]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }*/
             }
 
-
-            //Console.WriteLine(NumList2.Length);
-
-
-            //Console.WriteLine(NumList2.Length);
-            Console.Read();
-
+                Console.Read();
         }
+            
+       
+
+         
+            //Console.WriteLine(NumList2.Length);
+
+
+            //Console.WriteLine(NumList2.Length);
+           
+
+        
 
 
         static public int[] Int_to_array(int a, int b)
@@ -92,23 +121,7 @@ namespace HW_2
             return true;
         }
 
-        /*static public void Magic (int a)
-        {
-            for( int t = 0; t <= numb_array.Length; t++ )
-
-                if ( AreDigitsUnique(t) == true)
-                {
-                    if (AreDigitsUnique(t*2) == true)
-                    {
-                        if(AreDigitsUnique)
-                    }
-                }
-
-        }*/
-
-
-
-
+    
     }
 
 
